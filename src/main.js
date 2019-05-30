@@ -1,5 +1,5 @@
 const MAX_REDIRECTS = 20;
-const PORT = 80;
+const PORT = process.env.PORT || 80;
 const proxies = [
     {code: 'NL', host: 'http://45.76.43.163:8080'},
     {code: 'IT', host: 'http://93.39.228.188:3128'},
