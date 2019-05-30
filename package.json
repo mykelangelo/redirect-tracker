@@ -1,0 +1,28 @@
+{
+  "name": "redirect-tracker",
+  "version": "1.0.0",
+  "description": "Minimalistic link redirection tracker",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "redirect",
+    "track",
+    "trace",
+    "check",
+    "url",
+    "follow",
+    "info",
+    "automatic",
+    "link",
+    "forard",
+    "request"
+  ],
+  "author": "Mykola Papenko",
+  "license": "The Unlicense",
+  "dependencies": {
+    "https-proxy-agent": "^2.2.1",
+    "uuid": "^3.3.2"
+  }
+}
