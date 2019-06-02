@@ -2,6 +2,7 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/mykelangelo/redirect-tracker/badge.svg?targetFile=package.json)](https://snyk.io/test/github/mykelangelo/redirect-tracker?targetFile=package.json)
 [![Dependabot](https://api.dependabot.com/badges/status?host=github&repo=mykelangelo/redirect-tracker)](https://dependabot.com)
 [![Uptime Robot status](https://img.shields.io/uptimerobot/status/m782778115-57149be7fcb265ad179ce587.svg)](https://stats.uptimerobot.com/LP5Q8CZZy)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmykelangelo%2Fredirect-tracker.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmykelangelo%2Fredirect-tracker?ref=badge_shield)
 
 ## This Service 
 - detects two types of redirects: 
@@ -48,3 +49,7 @@ __Disclaimer:__ _although private proxy worked, current proxies are not stable/p
 - (locally) [localhost/https://bit.ly/2HHkf2q](localhost/https://bit.ly/2HHkf2q) or
 - (online) [https://redirect-tracker.herokuapp.com/track/https://bit.ly/2HHkf2q](https://redirect-tracker.herokuapp.com/track/https://bit.ly/2HHkf2q)
 
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fmykelangelo%2Fredirect-tracker.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fmykelangelo%2Fredirect-tracker?ref=badge_large)
