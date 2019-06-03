@@ -7,5 +7,5 @@ module.exports =
             action:
                 printer => writeEmojis(printer),
 
-            endpoint: endpoint
+            endpoint
         });
