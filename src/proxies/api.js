@@ -5,11 +5,10 @@ const writeProxiesList = require('./proxies-list-writer');
 module.exports =
     (endpoint, proxies) => ({
 
+            endpoint,
+
             action:
                 printer => writeProxiesList(
                     constructProxiesList(proxies),
-                    printer),
-
-            endpoint
+                    printer)
         });
-

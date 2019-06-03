@@ -3,9 +3,10 @@ const viewApiFabric = require('./view/api');
 const trackUrl = require('./tracker')(urlApiFabric, viewApiFabric);
 
 module.exports = endpoint => ({
+
+    endpoint,
+
     action:
         (printer, url, urlsVisited, proxy) =>
-            trackUrl(printer, url, urlsVisited, proxy),
-
-    endpoint
+            trackUrl(printer, url, urlsVisited, proxy)
 });

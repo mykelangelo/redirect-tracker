@@ -1,6 +1,7 @@
-module.exports = stringifier =>
-    response =>
-        `${getCookies(response, stringifier)}\n- Status: ${response.statusCode} ${response.statusMessage}\n\n`;
+module.exports =
+    stringifier =>
+        response =>
+            `${getCookies(response, stringifier)}\n- Status: ${response.statusCode} ${response.statusMessage}\n\n`;
 
 function getCookies(res, toString) {
     const cookies = res.headers['set-cookie'];

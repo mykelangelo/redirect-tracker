@@ -1,3 +1,4 @@
-module.exports = (https, http) => url => {
-    return url.startsWith('https') ? https : http;
-};
+module.exports =
+    (https, http) =>
+        url =>
+            url.startsWith('https') ? https : http;

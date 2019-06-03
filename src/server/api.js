@@ -19,4 +19,3 @@ module.exports =
                 detectProxyFabric(proxies)
             ).listen(PORT)
     });
-
