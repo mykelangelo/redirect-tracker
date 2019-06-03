@@ -1,9 +1,3 @@
-module.exports = (url, fullUrl) => {
+module.exports = (url, fullUrl) =>
+    url.startsWith('http') ? url : new URL(url, fullUrl).href;
 
-    if (!url.startsWith('http')) {
-
-        url = new URL(url, fullUrl).href;
-    }
-
-    return url;
-};
