@@ -1,15 +1,9 @@
 module.exports =
     (apis, defaultAction) => ({
         detectAction: stringBeginningWithEndpoint => {
-
-            for (const api of apis) {
-
-                if (stringBeginningWithEndpoint.startsWith(api.endpoint)) {
-
-                    return api.action;
-                }
-            }
-
-            return defaultAction;
+            
+            const foundApi = apis.find(api => stringBeginningWithEndpoint.startsWith(api.endpoint));
+            
+            return foundApi ? foundApi.action : defaultAction;
         }
     });
