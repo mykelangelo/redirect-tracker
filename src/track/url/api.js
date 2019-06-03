@@ -19,7 +19,7 @@ module.exports = (links, proxy) => ({
     detectProtocol:
         url => detectProtocol(url),
 
-    getAbsoluteUrlEvenIfUrlIsRelative:
+    absolutifyUrl:
         (url, previousAbsoluteUrl) => cure(url, previousAbsoluteUrl),
 
     findNextUrl:

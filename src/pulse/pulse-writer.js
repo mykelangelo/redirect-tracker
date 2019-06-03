@@ -1,3 +1,4 @@
 module.exports =
     (pulseMessage, printer) =>
-            printer.end(pulseMessage);
+
+        printer.end(pulseMessage);

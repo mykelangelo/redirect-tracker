@@ -1,39 +1,34 @@
 module.exports =
     (urlApiFabric, viewApiFabric) =>
-        (printer, url, urlsVisited, proxy) =>
-            track(urlApiFabric(urlsVisited, proxy), viewApiFabric(printer), url);
+        function (printer, url, proxy) {
 
-const track = (urlApi, viewApi, url) => {
+            const urlsVisited = [];
+            const urlApi = urlApiFabric(urlsVisited, proxy);
+            const viewApi = viewApiFabric(printer);
 
-    const invalid = urlApi.getMessageIfUrlIsInvalid(url);
+            return trackUrl(url);
 
-    if (invalid) {
+            function trackUrl(url) {
 
-        viewApi.writeError(invalid);
+                const invalid = urlApi.getMessageIfUrlIsInvalid(url);
 
-        return;
-    }
+                if (invalid) {
 
-    viewApi.writeUrl(url);
+                    viewApi.writeError(invalid);
 
-    const protocol = urlApi.detectProtocol(url);
-    const options = urlApi.constructOptions(url);
+                    return;
+                }
 
-    protocol.get(options, response => {
+                const protocol = urlApi.detectProtocol(url);
+                const options = urlApi.constructOptions(url);
 
-        viewApi.writeResponse(response);
+                protocol.get(options, response => {
 
-        let nextUrl = urlApi.findNextUrl(response);
+                    viewApi.writeUrlAndResponse(url, response);
 
-        if (!nextUrl) {
+                    let nextUrl = urlApi.findNextUrl(response);
 
-            viewApi.writeFinalMessage();
-
-            return;
-        }
-
-        nextUrl = urlApi.getAbsoluteUrlEvenIfUrlIsRelative(nextUrl, url);
-
-        track(urlApi, viewApi, nextUrl);
-    });
-};
+                    nextUrl ? trackUrl(urlApi.absolutifyUrl(nextUrl, url)) : viewApi.writeFinalMessage();
+                });
+            }
+        };

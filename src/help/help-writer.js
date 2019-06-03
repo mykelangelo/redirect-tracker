@@ -1,3 +1,4 @@
 module.exports =
     (helpMessage, printer) =>
-            printer.end(helpMessage);
+
+        printer.end(helpMessage);

@@ -5,19 +5,24 @@ const formErrorMessage = require('./error-message-fabric')(uniqueId);
 const formResponseInfo = require('./response-info-fabric')(commonApi.arrayToString);
 const formUrlMessage = require('./url-message-fabric');
 const finalMessage = require('./final-message-exporter');
-const writer = require('./writer');
+const writerFabric = require('./writer');
 
-module.exports = printer => ({
+module.exports = function (printer) {
 
-    writeResponse:
-        response => writer(printer).writeResponseInfo(formResponseInfo(response)),
+    const writer = writerFabric(printer);
 
-    writeUrl:
-        url => writer(printer).writeUrlMessage(formUrlMessage(url)),
+    return {
 
-    writeFinalMessage:
-        () => writer(printer).writeFinalMessage(finalMessage),
+        writeUrlAndResponse:
+            (url, response) => {
+                writer.writeUrlMessage(formUrlMessage(url));
+                writer.writeResponseInfo(formResponseInfo(response));
+            },
 
-    writeError:
-        message => writer(printer).writeErrorMessage(formErrorMessage(message))
-});
+        writeFinalMessage:
+            () => writer.writeFinalMessage(finalMessage),
+
+        writeError:
+            message => writer.writeErrorMessage(formErrorMessage(message))
+    };
+};

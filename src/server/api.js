@@ -10,12 +10,17 @@ const server = require('./server')(http, urlModule, view, commonApi.printer);
 const routerFabric = require('./router');
 
 module.exports =
-    (PORT, featuresApis, defaultAction, trackEndpointLength, proxies) => ({
+    function (PORT, featuresApis, defaultAction, trackEndpointLength, proxies) {
 
-        runServer:
-            () => server(
-                routerFabric(featuresApis, defaultAction),
-                urlExtractorFabric(trackEndpointLength),
-                detectProxyFabric(proxies)
-            ).listen(PORT)
-    });
+        const router = routerFabric(featuresApis, defaultAction);
+        const urlExtractor = urlExtractorFabric(trackEndpointLength);
+        const detectProxy = detectProxyFabric(proxies);
+
+        return {
+
+            runServer:
+                () =>
+                    server(router, urlExtractor, detectProxy)
+                        .listen(PORT)
+        };
+    };

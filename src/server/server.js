@@ -16,12 +16,11 @@ module.exports =
                     return;
                 }
 
-
                 const proxy = detectProxy(relativeUrlWithQuery.query);
 
                 view.writeInfo(printer, proxy);
 
                 const action = router.detectAction(relativeUrl);
 
-                action(printer, urlExtractor(relativeUrl), [], proxy);
+                action(printer, urlExtractor(relativeUrl), proxy);
             });

@@ -4,8 +4,8 @@ const writeEmojis = require('./emoji-writer')(constructEmojis);
 module.exports =
     endpoint => ({
 
-            endpoint,
+        endpoint,
 
-            action:
-                printer => writeEmojis(printer)
-        });
+        action:
+            printer => writeEmojis(printer)
+    });

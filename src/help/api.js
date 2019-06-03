@@ -2,10 +2,13 @@ const constructHelp = require('./help-fabric');
 const writeHelp = require('./help-writer');
 
 module.exports =
-    (trackEndpoint, pulseEndpoint, proxiesEndpoint, proxyQueryParamString) => ({
+    function (trackEndpoint, pulseEndpoint, proxiesEndpoint, proxyQueryParamString) {
 
-        action:
-            printer => writeHelp(
-                constructHelp(trackEndpoint, pulseEndpoint, proxiesEndpoint, proxyQueryParamString),
-                printer)
-    });
+        const helpMessage = constructHelp(trackEndpoint, pulseEndpoint, proxiesEndpoint, proxyQueryParamString);
+
+        return {
+
+            action:
+                printer => writeHelp(helpMessage, printer)
+        };
+    };

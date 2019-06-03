@@ -1,4 +1,5 @@
 const contentRegex = new RegExp(`(?<=<meta http-equiv="refresh" content=".*url=).*(?=">)`);
+const MAX_BODY_SIZE_TO_READ = 40000;
 
 module.exports = response => {
 
@@ -8,7 +9,7 @@ module.exports = response => {
 
         body += chunk;
 
-        if (body.length > 40000) {
+        if (body.length > MAX_BODY_SIZE_TO_READ) {
 
             const matchArray = body.match(contentRegex);
 

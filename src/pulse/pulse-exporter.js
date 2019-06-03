@@ -1,1 +1,3 @@
-module.exports = 'Server is UP, congrats!';
+module.exports =
+
+    'Server is UP, congrats!';

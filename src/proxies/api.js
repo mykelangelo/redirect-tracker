@@ -3,12 +3,15 @@ const constructProxiesList = require('./proxies-list-fabric')(commonApi.arrayToS
 const writeProxiesList = require('./proxies-list-writer');
 
 module.exports =
-    (endpoint, proxies) => ({
+    function (endpoint, proxies) {
+
+        const proxiesList = constructProxiesList(proxies);
+
+        return {
 
             endpoint,
 
             action:
-                printer => writeProxiesList(
-                    constructProxiesList(proxies),
-                    printer)
-        });
+                printer => writeProxiesList(proxiesList, printer)
+        };
+    };
