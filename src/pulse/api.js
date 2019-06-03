@@ -6,5 +6,5 @@ module.exports = endpoint => ({
     action:
         printer => writePulse(pulseMessage, printer),
 
-    endpoint: endpoint
+    endpoint
 });
