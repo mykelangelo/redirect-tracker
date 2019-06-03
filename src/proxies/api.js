@@ -10,6 +10,6 @@ module.exports =
                     constructProxiesList(proxies),
                     printer),
 
-            endpoint: endpoint
+            endpoint
         });
 
