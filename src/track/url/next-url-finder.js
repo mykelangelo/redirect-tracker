@@ -1,10 +1,2 @@
-module.exports = findMetaRedirectUrl => response => {
-    let nextUrl = response.headers.location;
+    module.exports = findMetaRedirectUrl => response => response.headers.location || findMetaRedirectUrl(response);
 
-    if (!nextUrl) {
-
-        nextUrl = findMetaRedirectUrl(response);
-    }
-
-    return nextUrl;
-};
