@@ -1,11 +1,11 @@
-[Online API](https://redirect-tracker.herokuapp.com/)
+[![Online API](https://img.shields.io/badge/online-API-blue.svg)](https://redirect-tracker.herokuapp.com/)
 [![Known Vulnerabilities](https://snyk.io/test/github/mykelangelo/redirect-tracker/badge.svg?targetFile=package.json)](https://snyk.io/test/github/mykelangelo/redirect-tracker?targetFile=package.json)
 [![Dependabot](https://api.dependabot.com/badges/status?host=github&repo=mykelangelo/redirect-tracker)](https://dependabot.com)
 [![Uptime Robot status](https://img.shields.io/uptimerobot/status/m782778115-57149be7fcb265ad179ce587.svg)](https://stats.uptimerobot.com/LP5Q8CZZy)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fmykelangelo%2Fredirect-tracker.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fmykelangelo%2Fredirect-tracker?ref=badge_shield)
-[![Awesome Badges](https://img.shields.io/badge/badges-awesome-green.svg)](https://github.com/Naereen/badges)
+[![Awesome Badges](https://img.shields.io/badge/badges-awesome-violet.svg)](https://github.com/Naereen/badges)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-goldenrod.svg?style=shield)](http://makeapullrequest.com)
 [![HitCount](http://hits.dwyl.io/mykelangelo/redirect-tracker.svg)](http://hits.dwyl.io/mykelangelo/redirect-tracker)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 ## This Service 
 - detects two types of redirects: 
