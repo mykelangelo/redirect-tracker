@@ -5,7 +5,9 @@
   "main": "src/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/main.js"
+    "start": "node src/main.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "keywords": [
     "redirect",
@@ -24,6 +26,8 @@
   "license": "The Unlicense",
   "dependencies": {
     "https-proxy-agent": "^2.2.1",
-    "uuid": "^3.3.2"
-  }
+    "uuid": "^3.3.2",
+    "snyk": "^1.230.5"
+  },
+  "snyk": true
 }
