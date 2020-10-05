@@ -26,7 +26,7 @@
   "license": "The Unlicense",
   "dependencies": {
     "https-proxy-agent": "^3.0.0",
-    "uuid": "^3.3.3",
+    "uuid": "^8.3.1",
     "snyk": "^1.234.0"
   },
   "snyk": true
