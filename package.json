@@ -27,7 +27,7 @@
   "dependencies": {
     "https-proxy-agent": "^3.0.0",
     "uuid": "^3.3.3",
-    "snyk": "^1.234.0"
+    "snyk": "^1.584.0"
   },
   "snyk": true
 }
