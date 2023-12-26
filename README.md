@@ -5,6 +5,16 @@
 [![Awesome Badges](https://img.shields.io/badge/badges-awesome-violet.svg)](https://github.com/Naereen/badges)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-goldenrod.svg?style=shield)](http://makeapullrequest.com)
 
+## Contributions are welcome here!
+Please, [check issues page](https://github.com/mykelangelo/redirect-tracker/issues)!
+
+Current to-do-list:
+- [x] add UI (made by the magnificent https://github.com/jsoneclick)
+- [ ] connect UI with the backend
+- [ ] add some tests for the main logic
+
+Feel free to edit this Readme as you contribute and change the scope of work and/or the behaviour of the application!
+
 ## This Service 
 - detects two types of redirects: 
   - by HTTP 3xx status and 
