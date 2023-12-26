@@ -1,4 +1,5 @@
 const MAX_LOG_MESSAGE_LENGTH = 250;
+const toString = require('./array-stringifier.js');
 
 module.exports =
     fs =>
@@ -24,7 +25,7 @@ module.exports =
                 },
 
             writeHead:
-                (code, headers, toString) => {
+                (code, headers) => {
 
                     response.writeHead(code, headers);
                     console.log(`sent status ${code} and headers ${toString(headers, ';')}`);

@@ -12,7 +12,7 @@ module.exports = MAX_REDIRECTS => (url, urlsVisited) => {
 
     if (urlsVisited.length >= MAX_REDIRECTS) {
 
-        return `Max number of ${MAX_REDIRECTS} redirect sreached, I'm tired, godspeed`;
+        return `Max number of ${MAX_REDIRECTS} redirect searched, I'm tired, godspeed`;
     }
 
     urlsVisited.push(url);

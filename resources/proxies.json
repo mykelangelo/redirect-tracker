@@ -1,0 +1,5 @@
+[
+    {"country": "USA", "code": "US", "host": "http://104.148.86.71:3129/"},
+    {"country": "Brazil", "code": "BR", "host": "http://168.181.196.76:8080/"},
+    {"country": "England", "code": "EN", "host": "http://45.77.56.114:30205/"}
+]

@@ -10,7 +10,7 @@ Please, [check issues page](https://github.com/mykelangelo/redirect-tracker/issu
 
 Current to-do-list:
 - [x] add UI (made by the magnificent https://github.com/jsoneclick)
-- [ ] connect UI with the backend
+- [ ] connect UI with the backend (almost done)
 - [ ] add some tests for the main logic
 
 Feel free to edit this Readme as you contribute and change the scope of work and/or the behaviour of the application!
@@ -29,6 +29,7 @@ Feel free to edit this Readme as you contribute and change the scope of work and
  - /track/{url} - track url redirecting
  - /pulse - see server status
  - /proxies - see list of provided proxies 
+ - /gui - Graphical User Interface
 
 __PS:__ proxy will only be enabled for /track/ endpoint when you append `?proxy=` query and proxy code `XX` to the end.
 Proxy allows to route service's traffic through remote server in selected region.
@@ -37,13 +38,13 @@ Proxy allows to route service's traffic through remote server in selected region
  - #### locally:    
     - install node.js (if you do not have it yet)
     - clone (or download and unpack) this repository
-    - install dependencies if needed
-    - open downloaded redirect-tracker directory in terminal
+   - open downloaded redirect-tracker directory in terminal
+    - install dependencies if needed (run either `npm install` or `npm update`)
     - run `node src/main.js` in terminal
     - open browser
-    - in address bar type `localhost/track/` and then append your `url` and press enter
+    - in address bar type `localhost/track/` (use http, not https) and then append your `url` and press enter
  - #### online:
-    - visit [https://redirect-tracker.herokuapp.com/](https://redirect-tracker.herokuapp.com/)
+    - visit -broken link, need to redeploy- [https://redirect-tracker.herokuapp.com/](https://redirect-tracker.herokuapp.com/)
     - in address bar append `track/` after `.com/` and your `url` after it (and optionally add `?proxy=XX` as well)
     - hit enter and enjoy 😊
     - hint: consider visiting other endpoints (e.g. to get proxy code `XX` you must visit `proxies/`) 

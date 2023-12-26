@@ -5,7 +5,7 @@ module.exports =
             const urlsVisited = [];
             const urlApi = urlApiFabric(urlsVisited, proxy);
             const viewApi = viewApiFabric(printer);
-
+            viewApi.writeHeaders();
             return trackUrl(url);
 
             function trackUrl(url) {

@@ -3,12 +3,212 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="/src/main.js"></script>
-    <link rel="icon" href="favicon.ico" type="image/ico">
     <title>
         Redirect Tracker
     </title>
+    <style>
+
+body {
+    margin: 0 auto;
+    background-color: grey;
+    overflow: hidden;
+    background-image: url(https://user-images.githubusercontent.com/46972880/59439214-82ab0880-8dfd-11e9-8d58-6c12697a7534.jpg);
+    background-repeat: no-repeat;
+}
+
+.content {
+    height: 80%;
+    width: 60%;
+
+    min-height: 500px;
+    min-width: 600px;
+    background-color: #26303a;
+    border-radius: 15px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 20px;
+    animation: anima 1s 1;
+
+}
+
+@keyframes anima {
+    0% {
+        bottom: -300px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+
+.text {
+
+    height: 10%;
+}
+
+#check {
+    height: 60px;
+    width: 150px;
+    font-size: calc(12px + 0.6vw);
+    font-family: Arial, Helvetica, sans-serif;
+    outline-style: none;
+
+    border: 5px solid #0ad63d;
+    background: none;
+    transition: 0.5s;
+    color: rgb(0, 143, 104);
+    cursor: pointer;
+
+    border-image: linear-gradient(45deg, rgb(0, 143, 104), rgb(250, 224, 66)) 1;
+}
+
+#check:hover {
+    background-image: linear-gradient(45deg, rgb(0, 143, 104), rgb(250, 224, 66));
+    color: white;
+}
+
+#check:active {
+    background-image: linear-gradient(45deg, rgb(250, 224, 66), rgb(0, 143, 104));
+    color: white;
+}
+
+.forms {
+
+
+}
+
+#url {
+    height: 50px;
+    width: 40%;
+    border: none;
+    text-align: center;
+    border-bottom: 5px solid #0ad63d;
+    padding: 0;
+    outline-style: none;
+    background: none;
+    color: #888e99;
+    transition: 0.5s;
+    border-image: linear-gradient(to right, rgb(0, 143, 104), rgb(250, 224, 66)) 1;
+}
+
+#url:focus {
+    width: 90%;
+}
+
+
+#proxy {
+    height: 55px;
+    width: 40%;
+    border: none;
+    text-align: center;
+    border-bottom: 5px solid #0ad63d;
+    padding: 0;
+    outline-style: none;
+    background: none;
+    color: #888e99;
+    cursor: pointer;
+    transition: 0.5s;
+    border-image: linear-gradient(to right, rgb(0, 143, 104), rgb(250, 224, 66)) 1;
+}
+
+input::placeholder {
+    color: #3b4b5b;
+}
+.result {
+    height: 24%;
+    width: 89%;
+    padding: 1%;
+    position: relative;
+    font-family: Arial, serif;
+    color: #dcdee2;
+    margin: 0 auto;
+    border: 1px dashed white;
+    border-image: linear-gradient(to right, rgb(0, 143, 104), rgb(250, 224, 66)) 1;
+}
+
+label {
+    color: #dcdee2;
+    font: 22px Georgia;
+}
+
+
+
+.custom-select {
+    width: 40%;
+    left: 0;
+    right: 0;
+    border-bottom: 5px solid #0ad63d;
+border-image: linear-gradient(to right, rgb(0, 143, 104), rgb(250, 224, 66)) 1;
+    margin: auto;
+  position: relative;
+  font-family: Arial;
+}
+
+.custom-select select {
+  display: none; 
+}
+
+.select-selected {
+
+  border-bottom: 5px solid #0ad63d;
+border-image: linear-gradient(to right, rgb(0, 143, 104), rgb(250, 224, 66)) 1;
+}
+
+
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+.select-items div,.select-selected {
+  color: #888e99;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+
+.select-items {
+  position: absolute;
+  background: rgba(22, 22, 28, 0.6);
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+input[type="search"]::-webkit-search-cancel-button{cursor:pointer; 
+    -webkit-appearance:none; width:17px; height:16px; background-image:url(/resources/dd.png);transition:0.5s; background-size:100%;}
+input[type="search"]::-webkit-search-cancel-button:hover{transform:rotate(180deg);}
+input[type="search"]::-webkit-search-cancel-button:active{height:30px; width:30px;}
+
+    </style>
 </head>
 <body>
 <div class="content">
@@ -22,12 +222,8 @@
             <br>
             <div class="custom-select">
             <select id="proxy">
-                <option value="#">None</option>
-                <option value="#">USA</option>
-                <option value="#">Brazil</option>
-<!--                todo<option value="#">Automate this to get from proxies endpoint</option>-->
             </select>
-        </div>
+            </div>
             <br><br><br>
             <input id="check" onclick="post()" type="button" value="Check">
         </div>
@@ -40,73 +236,109 @@
 
 
 <script>
-var x, i, j, selElmnt, a, b, c;
-
-x = document.getElementsByClassName("custom-select");
-for (i = 0; i < x.length; i++) {
-  selElmnt = x[i].getElementsByTagName("select")[0];
- 
-  a = document.createElement("DIV");
-  a.setAttribute("class", "select-selected");
-  a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
-  x[i].appendChild(a);
- 
-  b = document.createElement("DIV");
-  b.setAttribute("class", "select-items select-hide");
-  for (j = 1; j < selElmnt.length; j++) {
- 
-    c = document.createElement("DIV");
-    c.innerHTML = selElmnt.options[j].innerHTML;
-    c.addEventListener("click", function(e) {
-   
-        var y, i, k, s, h;
-        s = this.parentNode.parentNode.getElementsByTagName("select")[0];
-        h = this.parentNode.previousSibling;
-        for (i = 0; i < s.length; i++) {
-          if (s.options[i].innerHTML == this.innerHTML) {
-            s.selectedIndex = i;
-            h.innerHTML = this.innerHTML;
-            y = this.parentNode.getElementsByClassName("same-as-selected");
-            for (k = 0; k < y.length; k++) {
-              y[k].removeAttribute("class");
-            }
-            this.setAttribute("class", "same-as-selected");
-            break;
-          }
-        }
-        h.click();
-    });
-    b.appendChild(c);
-  }
-  x[i].appendChild(b);
-  a.addEventListener("click", function(e) {
+    const dataContainer = document.getElementsByClassName("custom-select")[0].getElementsByTagName("select")[0];
     
-      e.stopPropagation();
-      closeAllSelect(this);
-      this.nextSibling.classList.toggle("select-hide");
-      this.classList.toggle("select-arrow-active");
-    });
-}
-function closeAllSelect(elmnt) {
-
-  var x, y, i, arrNo = [];
-  x = document.getElementsByClassName("select-items");
-  y = document.getElementsByClassName("select-selected");
-  for (i = 0; i < y.length; i++) {
-    if (elmnt == y[i]) {
-      arrNo.push(i)
-    } else {
-      y[i].classList.remove("select-arrow-active");
+    fetch('/json')
+        .then(response => response.json())
+        .then(data => {
+            displayData(data);
+            setupCustomSelect();
+        })
+        .catch(error => console.error('Error fetching data:', error));
+  
+    function displayData(data) {
+        dataContainer.innerHTML = `<option value="">None</option>`;
+        data.forEach(item => {
+          const optionElement = document.createElement('option');
+          optionElement.value = item['code'];
+          optionElement.text = item['country'];
+          dataContainer.appendChild(optionElement);
+      });
     }
-  }
-  for (i = 0; i < x.length; i++) {
-    if (arrNo.indexOf(i)) {
-      x[i].classList.add("select-hide");
+    function post() {
+        fetch('/track/' + document.getElementById('url').value)
+                .then(response => response.text())
+                .then(data => {
+                    displayResult(data);
+                })
+                .catch(error => console.error('Error fetching data:', error));
     }
-  }
-}
+    function displayResult(data) {
+            const resultDiv = document.getElementById('redirects');
+            resultDiv.innerHTML = '';
+            
+            resultDiv.innerText = data;
+    }
 
-document.addEventListener("click", closeAllSelect);
-</script>
+    function setupCustomSelect() {
+    var x, i, j, selElmnt, a, b, c;
+
+    x = document.getElementsByClassName("custom-select");
+    for (i = 0; i < x.length; i++) {
+      selElmnt = x[i].getElementsByTagName("select")[0];
+    
+      a = document.createElement("DIV");
+      a.setAttribute("class", "select-selected");
+      a.innerHTML = selElmnt.options[selElmnt.selectedIndex].innerHTML;
+      x[i].appendChild(a);
+    
+      b = document.createElement("DIV");
+      b.setAttribute("class", "select-items select-hide");
+      for (j = 1; j < selElmnt.length; j++) {
+    
+        c = document.createElement("DIV");
+        c.innerHTML = selElmnt.options[j].innerHTML;
+        c.addEventListener("click", function(e) {
+    
+            var y, i, k, s, h;
+            s = this.parentNode.parentNode.getElementsByTagName("select")[0];
+            h = this.parentNode.previousSibling;
+            for (i = 0; i < s.length; i++) {
+              if (s.options[i].innerHTML == this.innerHTML) {
+                s.selectedIndex = i;
+                h.innerHTML = this.innerHTML;
+                y = this.parentNode.getElementsByClassName("same-as-selected");
+                for (k = 0; k < y.length; k++) {
+                  y[k].removeAttribute("class");
+                }
+                this.setAttribute("class", "same-as-selected");
+                break;
+              }
+            }
+            h.click();
+        });
+        b.appendChild(c);
+      }
+      x[i].appendChild(b);
+      a.addEventListener("click", function(e) {
+    
+          e.stopPropagation();
+          closeAllSelect(this);
+          this.nextSibling.classList.toggle("select-hide");
+          this.classList.toggle("select-arrow-active");
+        });
+    }
+}
+    function closeAllSelect(elmnt) {
+    
+      var x, y, i, arrNo = [];
+      x = document.getElementsByClassName("select-items");
+      y = document.getElementsByClassName("select-selected");
+      for (i = 0; i < y.length; i++) {
+        if (elmnt == y[i]) {
+          arrNo.push(i)
+        } else {
+          y[i].classList.remove("select-arrow-active");
+        }
+      }
+      for (i = 0; i < x.length; i++) {
+        if (arrNo.indexOf(i)) {
+          x[i].classList.add("select-hide");
+        }
+      }
+    }
+    
+    document.addEventListener("click", closeAllSelect);
+    </script>
 </body>
 </html>

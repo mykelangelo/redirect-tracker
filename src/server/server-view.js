@@ -1,20 +1,9 @@
-module.exports =
-    stringifier => ({
-        writeInfo:
-            (printer, proxy) => {
-
-                printer.writeHead(200, {'Content-Type': `text/plain; charset=utf8`}, stringifier);
-
-                if (proxy) {
-
-                    printer.write(`Using proxy ${proxy.proxy.host}`);
-                }
-            },
+module.exports = {
 
         pipeFavicon:
             printer => {
 
-                printer.writeHead(200, {'Content-Type': 'image/x-icon'}, stringifier);
+                printer.writeHead(200, {'Content-Type': 'image/x-icon'});
                 printer.pipeIcon('resources/favicon.ico');
             }
-    });
+    }

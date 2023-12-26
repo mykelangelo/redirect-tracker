@@ -1,4 +1,4 @@
-const uniqueId = require('uuid/v4');
+const { v4: uniqueId } = require('uuid');
 
 const commonApi = require('../../common/api');
 const formErrorMessage = require('./error-message-fabric')(uniqueId);
@@ -12,7 +12,8 @@ module.exports = function (printer) {
     const writer = writerFabric(printer);
 
     return {
-
+        writeHeaders:
+            () => printer.writeHead(200, {'Content-Type': `text/plain; charset=utf8`}),
         writeUrlAndResponse:
             (url, response) => {
                 writer.writeUrlMessage(formUrlMessage(url));

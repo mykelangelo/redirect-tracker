@@ -1,4 +1,5 @@
 module.exports =
-    (helpMessage, printer) =>
-
+    (helpMessage, printer) => {
+        printer.writeHead(200, {'Content-Type': `text/plain; charset=utf8`});
         printer.end(helpMessage);
+    }
