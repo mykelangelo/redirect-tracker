@@ -1,7 +1,11 @@
 const fs = require('fs');
 
 const PORT = process.env.PORT || 80;
-const proxies = fs.readFileSync('resources/proxies.json');
+const proxies = [
+    {"country": "Vietnam", "code": "VN", "host": "http://115.75.99.65:8080/"},
+    {"country": "Thailand", "code": "TH", "host": "http://182.53.50.2:3128/"},
+    {"country": "Indonesia", "code": "ID", "host": "http://103.76.12.42:80"}
+];
 const html = fs.readFileSync('src/ui/index.html');
 const trackEndpoint = '/track/';
 const pulseEndpoint = '/pulse';

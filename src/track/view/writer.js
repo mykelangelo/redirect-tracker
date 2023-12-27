@@ -8,7 +8,7 @@ module.exports =
             urlMessage => printer.write(urlMessage),
 
         writeFinalMessage:
-            finalMessage => printer.end(finalMessage),
+            finalMessage => printer.write(finalMessage),
 
         writeErrorMessage:
             errorMessage => printer.end(errorMessage)

@@ -1,3 +1,5 @@
+
+
 module.exports =
     (urlApiFabric, viewApiFabric) =>
         function (printer, url, proxy) {

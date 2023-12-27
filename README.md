@@ -10,7 +10,9 @@ Please, [check issues page](https://github.com/mykelangelo/redirect-tracker/issu
 
 Current to-do-list:
 - [x] add UI (made by the magnificent https://github.com/jsoneclick)
-- [ ] connect UI with the backend (almost done)
+- [x] connect UI with the backend
+- [ ] make proxies work
+- [ ] redeploy to heroku or smth else
 - [ ] add some tests for the main logic
 
 Feel free to edit this Readme as you contribute and change the scope of work and/or the behaviour of the application!

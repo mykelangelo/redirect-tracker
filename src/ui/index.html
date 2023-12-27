@@ -258,10 +258,16 @@ input[type="search"]::-webkit-search-cancel-button:active{height:30px; width:30p
     }
     function post() {
         document.getElementsByClassName('result')[0].scrollTop = 0
-        fetch('/track/' + document.getElementById('url').value)
+        const proxyEl = document.getElementById("proxy");
+        const proxyCode = proxyEl[proxyEl.selectedIndex].value;
+        const proxyPostfix = proxyCode === '' ? '' : '?proxy=' + proxyCode;
+        fetch('/track/' + document.getElementById('url').value + proxyPostfix)
                 .then(response => response.text())
                 .then(data => {
-                    displayResult(data);
+                  if (proxyCode !== '') {
+                    data = `Routed using ${proxyEl[proxyEl.selectedIndex].text}\n` + data;
+                  }
+                  displayResult(data);
                 })
                 .catch(error => console.error('Error fetching data:', error));
     }
